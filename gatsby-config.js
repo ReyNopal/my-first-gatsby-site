@@ -6,11 +6,20 @@ module.exports = {
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     {
-      resolve: "gatsby-source-filesystem",
+        resolve: "gatsby-source-filesystem",
+        options: {
+            name: `blog`,
+            path: `${__dirname}/blog`,
+        }
+    },
+    {
+      resolve: `gatsby-source-wordpress`,
       options: {
-        name: `blog`,
-        path: `${__dirname}/blog`,
+        url: `https://csc496wordpress.tldr.dev/graphql`,
+        protocol: `https`,
+        hostingWPCOM: 'false',
+        useACF: 'false'
       }
     },
-  ],
-};
+  ]
+}
