@@ -39,7 +39,7 @@ async function getData() {
     )
   
   exports.createPages = async ({ actions: { createPage } }) => {
-    const allPokemon = await getPokemonData(["mew", "dragonite", "abra", "squirtle"])
+    const allPokemon = await getPokemonData(["pikachu", "vulpix", "dragonite", "abra", "squirtle"])
     createPage({
       path: `/pokemon`,
       component: require.resolve("./src/templates/all-pokemon.js"),

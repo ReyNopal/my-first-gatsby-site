@@ -14,12 +14,19 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "fallback-local-storage": "^1.2.1",
     "gatsby": "^3.14.6",
     "gatsby-plugin-image": "^0.7.2",
     "gatsby-plugin-sharp": "^2.14.4",
     "gatsby-source-filesystem": "^2.11.1",
     "gatsby-source-wordpress": "^6.2.0",
+    "local-storage": "^2.0.0",
+    "local-storage-fallback": "^4.1.2",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "styled-components": "^5.3.3"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^2.0.0"
   }
 }
