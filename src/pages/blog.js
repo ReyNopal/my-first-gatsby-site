@@ -1,31 +1,36 @@
-import * as React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
+import * as React from 'react'
 
 const BlogPage = ({ data }) => {
-  return (
-    <Layout pageTitle="My Blog Posts!">
-      <ul>
-      {
-        data.allWpPost.nodes.map(node => (
-          <li key={node.slug}>
-            {node.slug}
-          </li>
-        ))
-      }
-      </ul>
-    </Layout>
-  )
+	return (
+	<Layout pageTitle="My Blog Posts!">
+		<ul>			
+		{
+			data.allWpPost.edges.map(({node}) => 
+			(<div>
+				<h1>{node.title}</h1>
+				<div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+			</div>
+			))}
+		</ul>
+	</Layout>
+	)
 }
 
-export const query = graphql ` 
-query {
-  allWpPost {
-    nodes {
-      slug
+export const query = graphql`
+  query {
+    allWpPost (sort: { fields: [date] } ) {
+      edges {
+          node{
+           title
+           excerpt
+           slug
+           id
+          }
+      }
     }
   }
-}
 `
 
 export default BlogPage
