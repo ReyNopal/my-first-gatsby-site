@@ -72,6 +72,11 @@ const Layout = ({ pageTitle, children }) => {
                 </Link>
               </li>
               <li className={navLinkItem}>
+                <Link to="/chart" className={navLinkText}>
+                  Chart
+                </Link>
+              </li>
+              <li className={navLinkItem}>
                 <button onClick={toggleTheme}>Dark/Light Mode</button>
               </li>
             </ul>
@@ -84,5 +89,5 @@ const Layout = ({ pageTitle, children }) => {
       </></ThemeProvider>
     )
   }
-  
+
   export default Layout

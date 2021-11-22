@@ -25,3 +25,8 @@
     font-weight: 700;
     margin: 3rem 0;
   }
+
+  .App {
+    font-family: sans-serif;
+    text-align: center;
+  }
